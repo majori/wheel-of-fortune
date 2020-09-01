@@ -1,0 +1,37 @@
+.slot {
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(236,225,225,1) 100%);
+  font-weight: bold;
+  font-size: 42px;
+  font-family: sans-serif;
+  padding: 1px;
+  transform: rotateY(-180deg);
+}
+
+.slot.opened {
+  animation: flip-vertical-left 1s cubic-bezier(.455,.03,.515,.955) both
+}
+
+@keyframes flip-vertical-left{
+  0% {
+    transform:rotateY(-180deg);
+    color: transparent;
+  }
+
+  49% {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+  
+  100% {
+    color: black;
+    transform:rotateY(0deg)
+  }
+}
+
+.slot.empty {
+  background: rgb(69,107,69);
+  background: radial-gradient(circle, rgba(69,107,69,1) 0%, rgba(9,93,4,1) 100%);
+}

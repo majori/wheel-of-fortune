@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Start from "./Start";
+import Game from "./Game";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sentence: [],
+    };
+  }
+
+  componentDidMount() {
+    this.setState({ sentence: "Guess this sentence" });
+  }
+
+  handleSetSentence() {}
+
+  render() {
+    const { sentence } = this.state;
+
+    return (
+      <div className="App">
+        {sentence.length === 0 ? (
+          <Start setSentence={this.handleSetSentence} />
+        ) : (
+          <Game sentence={sentence} />
+        )}
+      </div>
+    );
+  }
 }
 
 export default App;

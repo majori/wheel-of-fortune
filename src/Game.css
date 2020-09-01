@@ -1,0 +1,42 @@
+.game {
+  text-align: center;
+}
+
+.game .slots-wrapper-1 {
+  padding: 10px;
+  background: rgb(5,211,255);
+  background: linear-gradient(90deg, rgba(5,211,255,1) 0%, rgba(9,59,163,1) 100%);
+  border: 2px solid black;
+}
+
+.game .slots-wrapper-2 {
+  padding: 10px;
+  background: rgb(5,211,255);
+  background: linear-gradient(90deg, rgba(9,59,163,1) 0%, rgba(5,211,255,1) 100%);
+  border: 3px solid black;
+}
+
+.game .slots {
+  display: grid;
+  grid-template-columns: repeat(15, auto);
+  margin: auto;
+  background: green;
+}
+
+.game .slots > * {
+  display: inline-block;
+  min-height: 50px;
+  width: 35px;
+  margin: 2px;
+  border: 5px solid #413937;
+  text-align: center;
+}
+
+.game .guessed {
+  height: 20px;
+  margin-top: 20px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  letter-spacing: 10px;
+}
